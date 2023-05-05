@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' href='assets/style.css'>
+    <title>Lista de personas</title>
+</head>
+
+<body>
+    <h1>Lista de personas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Tipo de sangre</th>
+                <th>NSS</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% Persons.forEach(person=> { %>
+                <tr>
+                    <td>
+                        <%= person.nombre %>
+                    </td>
+                    <td>
+                        <%= person.edad %>
+                    </td>
+                    <td>
+                        <%= person.tipoSangre %>
+                    </td>
+                    <td>
+                        <%= person.nss %>
+                    </td>
+                    <td>
+                        <a href="#" class="editPersonLink">Editar</a>
+                    </td>
+                    <td>
+                        <a href="#" class="deletePersonLink">Eliminar</a>
+                    </td>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
+
+    <div style="margin-top: 10px; margin-left: 10%;">
+        <a href="./addPerson" class="createPersonLink">Agregar</a>
+    </div>
+
+</body>
+
+</html>
